@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
+    "build": "vite build",
+    "fix": "npm run lint && npm run prettier",
+    "lint": "eslint . --ext js,jsx --fix --report-unused-disable-directives --max-warnings 0",
+    "prettier": "prettier --write ./src/**/*.{js,jsx}",
     "preview": "vite preview"
   },
   "dependencies": {
